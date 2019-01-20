@@ -1,7 +1,6 @@
 package com.ringaile.springbootexample.controllers;
 
 import com.ringaile.springbootexample.mail.MailSender;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
