@@ -10,8 +10,6 @@ import javax.mail.internet.MimeMessage;
 
 public class SmtpMailSender implements MailSender{
 
-    private static Log log = LogFactory.getLog(MockMailSender.class);
-
     private JavaMailSender javaMailSender;
 
     public SmtpMailSender (JavaMailSender javaMailSender){
