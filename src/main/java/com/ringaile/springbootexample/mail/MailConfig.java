@@ -1,9 +1,11 @@
 package com.ringaile.springbootexample.mail;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
 
 @Configuration
 public class MailConfig {
@@ -15,7 +17,7 @@ public class MailConfig {
     }
     @Bean
     @ConditionalOnProperty("spring.mail.host")
-    public MailSender smtpMailSender(){
-        return new SmtpMailSender();
+    public MailSender smtpMailSender(JavaMailSender javaMailSender){
+        return new SmtpMailSender(javaMailSender);
     }
 }
