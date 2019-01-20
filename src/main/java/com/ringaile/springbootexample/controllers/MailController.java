@@ -3,6 +3,7 @@ package com.ringaile.springbootexample.controllers;
 import com.ringaile.springbootexample.mail.MailSender;
 import com.ringaile.springbootexample.mail.MockMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,8 +12,8 @@ public class MailController {
 
     private MailSender mailSender;
 
-    public MailController(MailSender smtpMailSender){
-        this.mailSender = smtpMailSender;
+    public MailController(@Qualifier("smtp") MailSender smtp){
+        this.mailSender = smtp;
     }
 
     @RequestMapping("/mail")
